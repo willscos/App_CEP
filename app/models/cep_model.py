@@ -4,7 +4,7 @@ from config import BASE_URL, FALLBACK_URL
 def buscar_cep_api_principal(cep):
     try:
         response = requests.get(
-        f"{BASE_URL}{cep}",
+        f"{BASE_URL}{cep}/json",
         headers={"Accept": 'application/json'},
         timeout=5
 
@@ -22,7 +22,7 @@ def buscar_cep_api_principal(cep):
 def buscar_cep_api_fallback(cep):
     try:
         response = requests.get(
-        f"{FALLBACK_URL}{cep}",
+        f"{FALLBACK_URL}{cep}/json",
         headers={"Accept": 'application/json'},
         timeout=5
 
